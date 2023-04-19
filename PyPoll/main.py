@@ -41,3 +41,17 @@ elif dianavotes > charlesvotes and dianavotes > raymonvotes:
     print('Winner: Diana DeGette\n\n--------------------')
 else:
     print('Winner: Raymon Anthony Doane\n\n--------------------')
+
+with open(os.path.join("PyPoll","Analysis","ElectionResults.txt"),"w") as output:
+    output.write("Election Results\n\n--------------------\n")
+    output.write(f"Total Votes: { grandtotalvotes}\n\n--------------------\n")
+    output.write(f"Charles Casper Stockham: { charlespercent}% ({charlesvotes})\n")
+    output.write(f"Diana DeGette: { dianapercent}% ({dianavotes})\n")
+    output.write(f"Raymon Anthony Doane: { raymonpercent}% ({raymonvotes})\n\n--------------------\n")
+
+    if charlesvotes > dianavotes and charlesvotes > raymonvotes:
+        output.write('Winer: Charles Casper Stockham\n\n--------------------')
+    elif dianavotes > charlesvotes and dianavotes > raymonvotes:
+        output.write('Winner: Diana DeGette\n\n--------------------')
+    else:
+        output.write('Winner: Raymon Anthony Doane\n\n--------------------')
